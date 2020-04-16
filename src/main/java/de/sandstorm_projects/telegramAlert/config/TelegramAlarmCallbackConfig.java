@@ -87,11 +87,11 @@ public class TelegramAlarmCallbackConfig {
             }
         }
 
-        if (!urlValidator.isValid(Config.GRAYLOG_URL)) {
+        if (!urlValidator.isValid(config.getString(Config.GRAYLOG_URL))) {
             throw new ConfigurationException("Graylog url is invalid.");
         }
 
-        if (config.stringIsSet(config.getString(Config.PROXY))) {
+        if (config.stringIsSet(Config.PROXY)) {
             String proxy = config.getString(Config.PROXY);
             assert proxy != null;
             String[] proxyArr = proxy.split(":");
