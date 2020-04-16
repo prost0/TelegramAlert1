@@ -91,7 +91,7 @@ public class TelegramAlarmCallbackConfig {
             throw new ConfigurationException("Graylog url is invalid.");
         }
 
-        if (config.stringIsSet(Config.PROXY)) {
+        if (config.stringIsSet(config.getString(Config.PROXY))) {
             String proxy = config.getString(Config.PROXY);
             assert proxy != null;
             String[] proxyArr = proxy.split(":");
