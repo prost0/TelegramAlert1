@@ -37,7 +37,7 @@ class TelegramBot {
     void sendMessage(String msg) throws AlarmCallbackException {
         final CloseableHttpClient client;
 
-        if (!proxy.isEmpty()) {
+        if ((proxy != null) && !proxy.isEmpty()) {
             String[] proxyArr = proxy.split(":");
             HttpHost proxy = new HttpHost(proxyArr[0], Integer.parseInt(proxyArr[1]));
             DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
